@@ -1,7 +1,6 @@
 """OSHA Severe Injury & Fatality Dashboard."""
 
 import streamlit as st
-from datetime import datetime
 import time
 
 from src.data_loader import load_severe_injuries, load_fatalities, clean_data
@@ -157,13 +156,19 @@ def main():
     """Main application."""
     # Header
     st.title("⚠️ OSHA Severe Injury & Fatality Dashboard")
-    st.caption(f"Data: January 2015 - June 2025 | Last updated: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
 
     # Load data
     with st.spinner("Loading data..."):
         df_injuries = load_severe_injuries()
         df_injuries = clean_data(df_injuries)
         df_fatalities = load_fatalities()
+
+    min_date = df_injuries['EventDate'].min()
+    max_date = df_injuries['EventDate'].max()
+    st.caption(
+        f"OSHA severe injury reports (federal jurisdiction), "
+        f"{min_date.strftime('%B %Y')} – {max_date.strftime('%B %Y')}"
+    )
 
     # Sidebar filters
     filters = render_sidebar(df_injuries)
