@@ -2,8 +2,7 @@
 
 Interactive dashboard for exploring **101,996 severe injury reports** (Jan 2015 – Jun 2025) and **22,865 fatality/catastrophe records** reported to federal OSHA — built with Streamlit and Plotly.
 
-<!-- After deploying to Streamlit Community Cloud, replace the URL below with your live app link -->
-**Live demo:** [osha-dashboard on Streamlit Cloud](https://share.streamlit.io) *(deployment link coming soon)*
+**Live demo:** [osha-dashboard-cenuscpehyevclrnznyhtv.streamlit.app](https://osha-dashboard-cenuscpehyevclrnznyhtv.streamlit.app/)
 
 ![Dashboard screenshot](assets/screenshot.png)
 
